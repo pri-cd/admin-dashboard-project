@@ -79,15 +79,11 @@ function create_interaction_button({ href = "#", src = "", alt = "" }) {
     const btn = document.createElement('button');
     btn.classList.add("interactive_btn");
 
-    const a = document.createElement('a');
-    a.href = href;
-
     const img = document.createElement('img');
     img.src = src;
     img.alt = alt;
 
-    a.appendChild(img);
-    btn.appendChild(a);
+    btn.appendChild(img);
 
     debug("This is button: ", btn);
     return btn;

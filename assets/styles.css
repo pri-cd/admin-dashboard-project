@@ -317,27 +317,24 @@ body {
     color: #ffffff;
 }
 
-
+/* Designing Articles ------------ */
 .main_grid {
     display: grid;
     background-color: var(--main-grid-bg);
-    grid-template-columns: 1fr auto;
-    grid-template-rows: repeat(2, 1fr);
-
+    grid-template-columns: auto clamp(250px, 250px, 300px);
+    gap: 10px;
     padding: 10px 20px;
 }
 
 .main_grid .article_section {
-    grid-row: 1 / -1;
+    grid-row: 1 / 2;
 }
 
 .main_grid .article_container {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(auto, 1fr));
-
-    padding: 10px 30px 0px 0px;
+    padding: 10px 10px 0px 0px;
 }
 
 .main_grid .article {
@@ -393,4 +390,65 @@ body {
 
 .main_grid .interactive_btn img[alt='Like']:hover {
     background-color: var(--interactive-btn-hrt-hover-bg);
+}
+
+
+/* Designing Announcements & Trending Section!*/
+.right_sidebar {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5px;
+}
+
+.right_sidebar .announcement_section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right_sidebar .announcement_container {
+    display: grid;
+    grid-template-rows: repeat(auto);
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 6px solid var(--article-left-band);
+}
+
+.right_sidebar .announcement_container small {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.right_sidebar .announcement_container hr {
+    margin: 5px 0px;
+}
+
+.right_sidebar .trending_container img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.right_sidebar .trending_container {
+
+    margin-top: 5px;
+    display: grid;
+    gap: 5px;
+
+    border-left: 6px solid var(--article-left-band);
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.right_sidebar .trending_container h4 {
+    font-size: 14px;
+}
+
+.right_sidebar .trending_container a {
+    display: flex;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #000000;
 }
