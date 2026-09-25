@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-size: 12px;
 }
 
 :root {
@@ -148,6 +149,7 @@ body {
 .sidebar {
     --sidebar-bg: #415a77;
     --sidebar-content: #ffffff;
+    --sidebar-title-size: 22px;
 
     padding: 10px 20px;
     background-color: var(--sidebar-bg);
@@ -169,6 +171,7 @@ body {
 
 .sidebar .dashboard h2 {
     color: var(--sidebar-content);
+    font-size: var(--sidebar-title-size);
 }
 
 .sidebar .navigation ul {
@@ -208,6 +211,8 @@ body {
     --btn-bg: rgb(0 95 115 / 0.7);
 
     --main-grid-bg: #C0C0C0;
+    --article-bg: #ffffff;
+    --article-left-band: #7FD1B9;
 
     grid-column: 2 / 3;
     display: grid;
@@ -277,11 +282,6 @@ body {
     gap: 10px;
 }
 
-.main_content .introduction_text p
-{
-    font-size: 14px;
-}
-
 .main_content .bottom_header {
     display: flex;
     flex-direction: row;
@@ -318,8 +318,7 @@ body {
 }
 
 
-.main_grid
-{
+.main_grid {
     display: grid;
     background-color: var(--main-grid-bg);
     grid-template-columns: 1fr auto;
@@ -328,7 +327,70 @@ body {
     padding: 10px 20px;
 }
 
-.main_grid .article_section
-{
+.main_grid .article_section {
     grid-row: 1 / -1;
+}
+
+.main_grid .article_container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(auto, 1fr));
+
+    padding: 10px 30px 0px 0px;
+}
+
+.main_grid .article {
+    background-color: var(--article-bg);
+    padding: 5px 10px;
+
+    border-left: 6px solid var(--article-left-band);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.main_grid .interactive_button_container {
+
+    display: grid;
+    grid-template-columns: repeat(3, 30px);
+    gap: 10px;
+    justify-content: end;
+
+    --interactive-btn-fav-hover-bg: #ffc300;
+    --interactive-btn-paw-hover-bg: #99582a;
+    --interactive-btn-hrt-hover-bg: #e63946;
+}
+
+
+.main_grid .interactive_btn {
+    border: none;
+    background-color: #ffffff;
+}
+
+.main_grid .interactive_btn img {
+    height: 20px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.main_grid .interactive_btn img:hover {
+    transform: scale(0.8);
+    transition: transform 0.1s;
+}
+
+.main_grid .interactive_btn img[alt='Favorite']:hover {
+    background-color: var(--interactive-btn-fav-hover-bg);
+}
+
+.main_grid .interactive_btn img[alt='Paw']:hover {
+    background-color: var(--interactive-btn-paw-hover-bg);
+}
+
+.main_grid .interactive_btn img[alt='Like']:hover {
+    background-color: var(--interactive-btn-hrt-hover-bg);
 }
